@@ -23,7 +23,7 @@ function Profile() {
   const submitData = async (newData) => {
     try {
       let BMRval;
-      if (newData.gender == "male") {
+      if (newData.gender === "male") {
         BMRval =
           88.362 +
           13.397 * newData.weight +
@@ -35,6 +35,17 @@ function Profile() {
           9.247 * newData.weight +
           3.098 * newData.height -
           4.33 * newData.age;
+      }
+      if (newData.activityfactor === "sedentary") {
+        newData.activityfactor = 1.2;
+      } else if (newData.activityfactor === "light") {
+        newData.activityfactor = 1.375;
+      } else if (newData.activityfactor === "moderate") {
+        newData.activityfactor = 1.55;
+      } else if (newData.activityfactor === "very") {
+        newData.activityfactor = 1.725;
+      } else if (newData.activityfactor === "extreme") {
+        newData.activityfactor = 1.9;
       }
 
       const { data, error } = await supabase.from("User-info").insert(
@@ -138,6 +149,22 @@ function Profile() {
             onChange={handleChange}
             className="UserForm-input"
           />
+        </label>
+
+        <label className="UserForm-label">
+          Actiivty Group:
+          <select
+            name="activityfactor"
+            value={formData.activityfactor}
+            onChange={handleChange}
+            className="UserForm-select"
+          >
+            <option value="sedentery">Sedentary</option>
+            <option value="light">Lightly Active</option>
+            <option value="moderate">Moderately Active</option>
+            <option value="very">Very Active</option>
+            <option value="extreme">Extremely Active</option>
+          </select>
         </label>
 
         <button type="submit" className="UserForm-button">
