@@ -110,7 +110,7 @@ input {
   position: absolute;
   left: 648px;
   right: 649px;
-  top: 460px;
+  top: 525px;
   bottom: 305px;
 }
 ::placeholder {
@@ -312,7 +312,7 @@ input {
 
 .UserForm-title {
   text-align: center;
-  color: #ffffff;
+  color: #000000;
 }
 
 .UserForm-form {
@@ -321,7 +321,7 @@ input {
 }
 
 .UserForm-label {
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 10px;
 }
 
@@ -329,6 +329,7 @@ input {
 .UserForm-select {
   width: 100%;
   padding: 8px;
+  background-color: #000000;
   margin-top: 4px;
   margin-bottom: 10px;
   border: 1px solid #ddd;

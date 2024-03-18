@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { supabase } from "./supabaseClient";
 
 function Profile() {
+  const [User, setUser] = React.useState();
   const [formData, setFormData] = useState({
     name: "",
     age: "",
@@ -9,6 +11,46 @@ function Profile() {
     weight: "",
     weightGoal: "",
   });
+
+  React.useEffect(() => {
+    const fetchUser = async () => {
+      const currentUser = await supabase.auth.getUser();
+      if (currentUser.data.user != null) setUser(currentUser);
+    };
+    fetchUser();
+  }, []);
+
+  const submitData = async (newData) => {
+    try {
+      let BMRval;
+      if (newData.gender == "male") {
+        BMRval =
+          88.362 +
+          13.397 * newData.weight +
+          4.799 * newData.height -
+          5.677 * newData.age;
+      } else {
+        BMRval =
+          447.593 +
+          9.247 * newData.weight +
+          3.098 * newData.height -
+          4.33 * newData.age;
+      }
+
+      const { data, error } = await supabase.from("User-info").insert(
+        [newData].map((item) => ({
+          ...item,
+          BMR: BMRval,
+          id: User.data.user.id,
+        }))
+      );
+      if (error) {
+        throw error;
+      }
+    } catch (error) {
+      console.error("Error modifying data:", error.message);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,6 +63,7 @@ function Profile() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data:", formData);
+    submitData(formData);
   };
 
   return (
