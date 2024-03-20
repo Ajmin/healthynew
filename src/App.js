@@ -9,6 +9,11 @@ import Product from "./components/product.js";
 import Suggestive from "./components/suggestive.js";
 import UserProgress from "./components/userprogress.js";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import foodimg from "./images/foodimg.png";
+import sect2right from "./images/sect2right.png";
+import sect2left from "./images/sect2left.png";
+import whyus from "./images/why.png";
+import qnpic from "./images/hlthharm.png";
 
 function ProducSearch() {
   const [prodSearch, setprodSearch] = React.useState("");
@@ -25,7 +30,8 @@ function ProducSearch() {
       console.log(url);
       const response = await fetch(url);
       const data = await response.json();
-      navigate("product", { state: data });
+      data && console.log(data);
+      data && navigate("product", { state: data });
     }
   }
 
@@ -46,17 +52,26 @@ function Home() {
   return (
     <div className="Home">
       <div className="description-container">
-        <h1 className="title">One Step Solution</h1>
-        <p className="subtitle">For all your dietary needs!</p>
-        <p className="main-description">
-          Using your BMI index we calculate whether the dish is suitable for
-          you.
-        </p>
-        <ProducSearch />
-        <p className="cta" link>
-          <a href="/portal">Start Your Journey Today</a>
-        </p>
+        <div>
+          <h1 className="title">One Step Solution</h1>
+          <p className="subtitle">For all your dietary needs!</p>
+          <p className="main-description">
+            Using your BMI index we calculate whether the dish is suitable for
+            you.
+          </p>
+          <ProducSearch />
+        </div>
+        <img src={foodimg} className="foodimg" />
       </div>
+      <div className="section2">
+        <img src={sect2left} className="section2left" />
+        <img src={whyus} className="section2why" />
+        <img src={qnpic} className="qnpic" />
+        <img src={sect2right} className="section2right" />
+      </div>
+      {/* <p className="cta" link>
+        <a href="/portal">Start Your Journey Today</a> 
+      </p> */}
     </div>
   );
 }
