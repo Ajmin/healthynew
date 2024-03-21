@@ -6,41 +6,17 @@ function Suggestive() {
       id: 1,
       title: "Card 1",
     },
-    {
-      id: 2,
-      title: "Card 2",
-    },
-    {
-      id: 3,
-      title: "Card 3",
-    },
   ]);
   const [cardslh, setCardslh] = React.useState([
     {
       id: 1,
       title: "Card 1",
     },
-    {
-      id: 2,
-      title: "Card 2",
-    },
-    {
-      id: 3,
-      title: "Card 3",
-    },
   ]);
   const [cardsdn, setCardsdn] = React.useState([
     {
       id: 1,
       title: "Card 1",
-    },
-    {
-      id: 2,
-      title: "Card 2",
-    },
-    {
-      id: 3,
-      title: "Card 3",
     },
   ]);
   const [meal, setMeal] = React.useState();

@@ -7,6 +7,7 @@ import Profile from "./components/profile.js";
 import Portal from "./components/portal.js";
 import Product from "./components/product.js";
 import Suggestive from "./components/suggestive.js";
+import MealPlan from "./components/mealplan.js";
 import UserProgress from "./components/userprogress.js";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import foodimg from "./images/foodimg.png";
@@ -96,6 +97,7 @@ export default function App() {
           <Route path="/portal" element={<Portal />} />
           <Route path="/product" element={<Product />} />
           <Route path="/suggestive" element={<Suggestive />} />
+          <Route path="/mealplan" element={<MealPlan />} />
           <Route path="/userprogress" element={<UserProgress />} />
         </Routes>
       </div>
