@@ -1,9 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "./supabaseClient.js";
+import { useContext } from "react";
+import { MealContext } from "../App.js";
 
 export default function Login(props) {
   const [alertMessage, setAlertMessage] = React.useState("");
+  const [meal, setMeal, user, setUser] = useContext(MealContext);
   const navigate = useNavigate();
   const [regdata, setRegdata] = React.useState({
     email: "",
@@ -18,27 +21,27 @@ export default function Login(props) {
       };
     });
   }
-
+  const [userdat, setUserdat] = React.useState();
+  React.useEffect(() => {
+    setUser(userdat);
+    console.log(user);
+  }, [userdat]);
   async function signInWithEmail() {
     try {
-      const { user, error } = await supabase.auth.signInWithPassword({
+      const { User, error } = await supabase.auth.signInWithPassword({
         email: regdata.email,
         password: regdata.password,
       });
       if (error) {
         throw error;
       }
-      const userdat = await supabase.auth.getUser();
+      setUserdat(await supabase.auth.getUser());
 
       console.log("User logged in successfully:", userdat.data.user.email);
       // You can redirect the user to another page or update the UI accordingly
       setAlertMessage(
         `Welcome, ${userdat.data.user.email}! You are now logged in.`
       );
-      setTimeout(() => {
-        navigate("/");
-        window.location.reload();
-      }, 3000);
     } catch (error) {
       console.error("Login error:", error);
 
@@ -52,6 +55,7 @@ export default function Login(props) {
 
       setAlertMessage(errorMessage);
     }
+    if (user != null) navigate("/mealplan");
   }
 
   function handleSubmit(event) {

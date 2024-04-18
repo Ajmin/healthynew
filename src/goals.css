@@ -1,0 +1,21 @@
+.Goals {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.goalset {
+  position: relative;
+  align-self: center;
+  width: 25vw;
+  left: 30vw;
+}
+
+.goalscont {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 1%;
+  top: -305px;
+  left: 525px;
+}

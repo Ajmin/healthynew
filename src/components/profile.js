@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import { useContext } from "react";
+import { useState } from "react";
+import React from "react";
 import { supabase } from "./supabaseClient";
+import { MealContext } from "../App";
 
 function Profile() {
-  const [User, setUser] = React.useState();
+  const [meal, setMeal, User, setUser] = useContext(MealContext);
   const [formData, setFormData] = useState({
     name: "",
     age: "",
@@ -14,10 +17,11 @@ function Profile() {
 
   React.useEffect(() => {
     const fetchUser = async () => {
+      console.log("never once");
       const currentUser = await supabase.auth.getUser();
       if (currentUser.data.user != null) setUser(currentUser);
     };
-    fetchUser();
+    if (User == null) fetchUser();
   }, []);
 
   const submitData = async (newData) => {

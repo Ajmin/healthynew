@@ -7,6 +7,11 @@
   height: 200vh; /* Adjust the height as needed */
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .section2 {
   display: flex;
   justify-content: space-between;
@@ -494,54 +499,88 @@ h2 {
   background-color: #8ec641;
 }
 
+.mealplans {
+  margin: 0;
+  padding: 0;
+  padding-top: -20px;
+  background: linear-gradient(to bottom, #7ca886, #008f6e);
+  width: 100vw;
+  height: 120vh;
+}
+
+.whitebody {
+  position: relative;
+  padding-top: 2vh;
+  left: 5%;
+  background-color: #fafafa;
+  width: 95vw;
+  height: 120vh;
+}
+
+.todaycookingh1 {
+  color: #00785c;
+  font-family: "SF UI Display";
+}
+
 .breakfast,
 .dinner,
 .lunch {
   display: flex;
   overflow-x: auto;
-  height: 350px;
-  width: 1500px;
-  padding: 50px;
-  background-color: #ffffff;
+  padding: 1px;
+}
+
+.breakfast h1,
+.dinner h1,
+.lunch h1 {
+  position: relative;
+  left: 100px;
+  top: 10px;
+  z-index: 200;
+  font-family: "SF UI Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #747373;
 }
 
 .sugg-container {
   display: flex;
 }
+
 .sugg-card {
+  position: relative;
   flex: 0 0 auto;
+  overflow: hidden;
   margin: 10px;
-  background-color: #ffffff; /* White card */
   border: 1px solid #e0e0e0; /* Light gray border */
-  border-radius: 8px;
+  border-radius: 13.345px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  width: 250px; /* Adjust width */
-  height: 250px; /* Adjust height */
+  width: 167px; /* Adjust width */
+  height: 215px; /* Adjust height */
+}
+
+.sugg-card::before {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 62.33%);
 }
 
 .sugg-img {
-  position: relative;
-  top: 70px;
-  left: 10px;
-  width: 40%;
-  height: 40%;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
   object-fit: cover; /* Ensure the image covers the entire area */
-}
-.sugg-container:hover .sugg-card {
-  transform: translateX(20px);
-}
-
-.sugg-card:nth-child(1) {
-  z-index: 4;
-}
-.sugg-card:nth-child(2) {
-  z-index: 3;
-}
-.sugg-card:nth-child(3) {
-  z-index: 2;
-}
-.sugg-card:nth-child(4) {
-  z-index: 1;
+  z-index: 0;
 }
 
 .up-container {
@@ -588,4 +627,101 @@ h2 {
 
 .sleep-cycle h2 {
   margin-bottom: 10px;
+}
+
+.mealcontainer {
+  padding-left: 1vw;
+  padding-top: 1vh;
+}
+
+.calendar {
+  position: relative;
+  height: 11vh;
+  width: 70vh;
+  left: 10vh;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border: 1px solid #ffffff;
+  box-shadow: -10px -10px 30px #ffffff, 10px 10px 30px rgba(174, 174, 192, 0.4);
+  border-radius: 16px;
+}
+
+.weeks {
+  display: flex;
+  justify-content: center;
+}
+
+.weeklymealh1 {
+  font-family: "SF UI DISPLAY";
+  color: #00785c;
+  font-weight: 300;
+  font-size: 5vh;
+}
+
+.week {
+  z-index: 1;
+  position: relative;
+  width: 100px;
+  margin: 2px;
+  height: 32px;
+  box-sizing: border-box;
+  background: #fafafa;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+}
+
+.days {
+  position: relative;
+  z-index: 1;
+  width: 99%;
+  height: 32px;
+  background: #fafafa;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.days button {
+  font-family: "SF UI Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 10px;
+  color: #a5a5a5;
+  text-align: center;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.days button:hover {
+  color: rgb(11, 11, 11); /* Text color changes to red on hover */
+}
+.week h1 {
+  font-family: "SF UI Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #a5a5a5;
+  text-align: center;
+}
+
+.sqrcontainer {
+  display: flex;
+  width: 50vw;
+  justify-content: space-between;
+}
+
+.plans {
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+}
+
+.goalbt {
+  width: 143px;
+  height: 49px;
+  border: none;
+  padding-bottom: 9.5vh;
+  background-color: transparent;
 }

@@ -1,0 +1,49 @@
+.square-card {
+  width: 200px; /* Adjust width as needed */
+  height: 200px; /* Square shape */
+  border-radius: 10px; /* Border radius */
+  overflow: hidden; /* Hide overflow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-image {
+  width: 60%;
+  height: 50%;
+  align-self: center;
+}
+
+.card-content {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom-left-radius: 10px; /* Match border radius of the card */
+  border-bottom-right-radius: 10px; /* Match border radius of the card */
+}
+
+.textcontainer {
+  position: relative;
+  height: 3vh;
+  width: 10vw;
+  left: 1vh;
+}
+
+.cardheading {
+  margin: 0;
+  color: #000000;
+  font-size: 2vh;
+  font-family: "SF UI Display";
+}
+
+.cardsubheading {
+  margin: 0;
+  color: #a6a5a5;
+  font-family: "SF UI Display";
+  font-size: 1.5vh;
+  font-weight: 200;
+}

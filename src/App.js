@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext } from "react";
 import Navbar from "./components/Navbar.js";
 import Register from "./components/Register.js";
 import Login from "./components/Login.js";
@@ -15,6 +15,10 @@ import sect2right from "./images/sect2right.png";
 import sect2left from "./images/sect2left.png";
 import whyus from "./images/why.png";
 import qnpic from "./images/hlthharm.png";
+import Goal from "./goals.js";
+import Test from "./components/test.js";
+
+export const MealContext = createContext();
 
 function ProducSearch() {
   const [prodSearch, setprodSearch] = React.useState("");
@@ -52,6 +56,7 @@ function ProducSearch() {
 function Home() {
   return (
     <div className="Home">
+      <Navbar />
       <div className="description-container">
         <div>
           <h1 className="title">One Step Solution</h1>
@@ -79,15 +84,24 @@ function Home() {
 
 export default function App() {
   const [rerender, setRerender] = React.useState(0);
+  const [meal, setMeal] = React.useState();
+  const [User, setUser] = React.useState();
 
+  React.useEffect(() => {
+    console.log("TESTING TRYING");
+    console.log("MEAL:", meal);
+  }, [meal]);
+
+  React.useEffect(() => {
+    console.log("USER:", User);
+  }, [User]);
   function handleState() {
     setRerender(() => 1);
     console.log(rerender);
   }
   return (
     <div>
-      <Navbar />
-      <div className="Maincontent">
+      <MealContext.Provider value={[meal, setMeal, User, setUser]}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
@@ -99,8 +113,10 @@ export default function App() {
           <Route path="/suggestive" element={<Suggestive />} />
           <Route path="/mealplan" element={<MealPlan />} />
           <Route path="/userprogress" element={<UserProgress />} />
+          <Route path="/goal" element={<Goal />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
-      </div>
+      </MealContext.Provider>
     </div>
   );
 }
