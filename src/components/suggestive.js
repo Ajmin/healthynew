@@ -5,6 +5,7 @@ import { supabase } from "./supabaseClient";
 
 function Suggestive(props) {
   const [meal, setMeal, User, setUser] = useContext(MealContext);
+  const [dailycal, setDailycal] = React.useState();
   console.log(User);
 
   const [cardsbf, setCardsbf] = React.useState([
@@ -25,7 +26,7 @@ function Suggestive(props) {
       title: "Card 1",
     },
   ]);
-  async function fetchMealPlan() {
+  async function fetchMealPlan(cal) {
     try {
       const response = await fetch(
         "https://api.edamam.com/api/meal-planner/v1/f2a8e0ca/select",
@@ -51,7 +52,7 @@ function Suggestive(props) {
               fit: {
                 ENERC_KCAL: {
                   min: 1000,
-                  max: 3000,
+                  max: cal,
                 },
                 "SUGAR.added": {
                   max: 20,
@@ -79,7 +80,7 @@ function Suggestive(props) {
                   fit: {
                     ENERC_KCAL: {
                       min: 100,
-                      max: 600,
+                      max: 500,
                     },
                   },
                 },
@@ -105,8 +106,8 @@ function Suggestive(props) {
                   },
                   fit: {
                     ENERC_KCAL: {
-                      min: 300,
-                      max: 900,
+                      min: 100,
+                      max: 600,
                     },
                   },
                 },
@@ -130,7 +131,7 @@ function Suggestive(props) {
                   },
                   fit: {
                     ENERC_KCAL: {
-                      min: 200,
+                      min: 100,
                       max: 900,
                     },
                   },
@@ -176,17 +177,14 @@ function Suggestive(props) {
     const loadMeal = async () => {
       const userinfo = await fetchUserinfo();
       const mealinfo = await fetchMealinfo();
+      setDailycal(userinfo.dailycalories);
       if (mealinfo) {
         await props.handleChange(0);
         console.log(mealinfo.created_at);
         setMeal(mealinfo);
         console.log(meal);
       } else {
-        console.log(userinfo);
-        const meals = await fetchMealPlan();
-        console.log(meals);
-        setMeal(meals);
-        console.log(meal);
+        const meals = await fetchMealPlan(userinfo.dailycalories);
         const { datas, errors } = await supabase
           .from("meals")
           .insert({ id: User.data.user.id, mealdata: JSON.stringify(meals) });
@@ -223,6 +221,7 @@ function Suggestive(props) {
         )}&app_id=2df5c54e&app_key=%2085d882d0049a0409d41f0a3b69d78b1d%09&field=label&field=image&field=source&field=calories&field=glycemicIndex&field=mealType&field=totalDaily`
       );
       const cardData = await cardResponse.json();
+      console.log(cardData);
       return { ...card, data: cardData };
     });
     setCardsbf(await Promise.all(updatedCards));
@@ -277,6 +276,36 @@ function Suggestive(props) {
               className="sugg-img"
             />
             {card.title}
+            <h1 className="dish">
+              Dish: {card.data && card.data.hits[0].recipe.label}
+            </h1>
+            <h1 className="dish">
+              Calories:{" "}
+              {card.data && (
+                <div>
+                  {card.data.hits[0].recipe.calories / (0.3 * dailycal) >= 2 ? (
+                    <>
+                      <p>
+                        {card.data.hits[0].recipe.calories /
+                          Math.floor(
+                            card.data.hits[0].recipe.calories / (0.3 * dailycal)
+                          )}
+                      </p>
+                      <p>
+                        {Math.floor(
+                          card.data.hits[0].recipe.calories / (0.3 * dailycal)
+                        )}{" "}
+                        servings.
+                      </p>
+                    </>
+                  ) : (
+                    <p>{card.data.hits[0].recipe.calories}</p>
+                  )}
+                  {console.log(0.3 * dailycal)}
+                  {console.log(card.data.hits[0].recipe.calories)}
+                </div>
+              )}
+            </h1>
           </div>
         ))}
       </div>
@@ -289,6 +318,37 @@ function Suggestive(props) {
               className="sugg-img"
             />
             {card.title}
+            <h1 className="dish">
+              Dish: {card.data && card.data.hits[0].recipe.label}
+            </h1>
+            <h1 className="dish">
+              Calories:{" "}
+              {card.data && (
+                <div>
+                  {card.data.hits[0].recipe.calories / (0.3 * dailycal) >= 2 ? (
+                    <>
+                      <p>
+                        {card.data.hits[0].recipe.calories /
+                          Math.floor(
+                            card.data.hits[0].recipe.calories /
+                              (0.35 * dailycal)
+                          )}
+                      </p>
+                      <p>
+                        {Math.floor(
+                          card.data.hits[0].recipe.calories / (0.3 * dailycal)
+                        )}{" "}
+                        servings.
+                      </p>
+                    </>
+                  ) : (
+                    <p>{card.data.hits[0].recipe.calories}</p>
+                  )}
+                  {console.log(0.3 * dailycal)}
+                  {console.log(card.data.hits[0].recipe.calories)}
+                </div>
+              )}
+            </h1>
           </div>
         ))}
       </div>
@@ -301,6 +361,36 @@ function Suggestive(props) {
               className="sugg-img"
             />
             {card.title}
+            <h1 className="dish">
+              Dish: {card.data && card.data.hits[0].recipe.label}
+            </h1>
+            <h1 className="dish">
+              Calories:{" "}
+              {card.data && (
+                <div>
+                  {card.data.hits[0].recipe.calories / (0.3 * dailycal) >= 2 ? (
+                    <>
+                      <p>
+                        {card.data.hits[0].recipe.calories /
+                          Math.floor(
+                            card.data.hits[0].recipe.calories / (0.3 * dailycal)
+                          )}
+                      </p>
+                      <p>
+                        {Math.floor(
+                          card.data.hits[0].recipe.calories / (0.3 * dailycal)
+                        )}{" "}
+                        servings.
+                      </p>
+                    </>
+                  ) : (
+                    <p>{card.data.hits[0].recipe.calories}</p>
+                  )}
+                  {console.log(0.3 * dailycal)}
+                  {console.log(card.data.hits[0].recipe.calories)}
+                </div>
+              )}
+            </h1>
           </div>
         ))}
       </div>
@@ -350,99 +440,20 @@ function Suggestive() {
             body: JSON.stringify({
               size: 7,
               plan: {
-                accept: {
-                  all: [
-                    {
-                      health: ["SOY_FREE", "FISH_FREE", "MEDITERRANEAN"],
-                    },
-                  ],
-                },
-                fit: {
-                  ENERC_KCAL: {
-                    min: 1000,
-                    max: 3000,
-                  },
-                  "SUGAR.added": {
-                    max: 20,
-                  },
-                },
+                accept: { all: [] },
+                fit: { ENERC_KCAL: { min: 1000, max: 2000 } },
                 sections: {
                   Breakfast: {
-                    accept: {
-                      all: [
-                        {
-                          dish: [
-                            "drinks",
-                            "egg",
-                            "biscuits and cookies",
-                            "bread",
-                            "pancake",
-                            "cereals",
-                          ],
-                        },
-                        {
-                          meal: ["breakfast"],
-                        },
-                      ],
-                    },
-                    fit: {
-                      ENERC_KCAL: {
-                        min: 100,
-                        max: 600,
-                      },
-                    },
+                    accept: { all: [{ meal: ["breakfast"] }] },
+                    fit: { ENERC_KCAL: { min: 100, max: 600 } },
                   },
                   Lunch: {
-                    accept: {
-                      all: [
-                        {
-                          dish: [
-                            "main course",
-                            "pasta",
-                            "egg",
-                            "salad",
-                            "soup",
-                            "sandwiches",
-                            "pizza",
-                            "seafood",
-                          ],
-                        },
-                        {
-                          meal: ["lunch/dinner"],
-                        },
-                      ],
-                    },
-                    fit: {
-                      ENERC_KCAL: {
-                        min: 300,
-                        max: 900,
-                      },
-                    },
+                    accept: { all: [{ meal: ["lunch/dinner"] }] },
+                    fit: { ENERC_KCAL: { min: 300, max: 900 } },
                   },
                   Dinner: {
-                    accept: {
-                      all: [
-                        {
-                          dish: [
-                            "seafood",
-                            "egg",
-                            "salad",
-                            "pizza",
-                            "pasta",
-                            "main course",
-                          ],
-                        },
-                        {
-                          meal: ["lunch/dinner"],
-                        },
-                      ],
-                    },
-                    fit: {
-                      ENERC_KCAL: {
-                        min: 200,
-                        max: 900,
-                      },
-                    },
+                    accept: { all: [{ meal: ["lunch/dinner"] }] },
+                    fit: { ENERC_KCAL: { min: 200, max: 900 } },
                   },
                 },
               },
@@ -456,7 +467,6 @@ function Suggestive() {
 
         const data = await response.json();
         const mealCopy = { ...data };
-        mealCopy.selection.sort(() => Math.random() - 0.5);
         setMeal(mealCopy);
       } catch (error) {
         console.error("There was a problem with your fetch operation:", error);
@@ -481,7 +491,7 @@ function Suggestive() {
     const updatedCards = cardsbf.map(async (card) => {
       const cardResponse = await fetch(
         `https://api.edamam.com/api/recipes/v2/by-uri?type=public&beta=true&uri=${encodeURIComponent(
-          meal.selection[card.id - 1].sections.Breakfast.assigned
+          meal.selection[0].sections.Breakfast.assigned
         )}&app_id=2df5c54e&app_key=%2085d882d0049a0409d41f0a3b69d78b1d%09&field=label&field=image&field=source&field=calories&field=glycemicIndex&field=mealType&field=totalDaily`
       );
       const cardData = await cardResponse.json();
@@ -494,7 +504,7 @@ function Suggestive() {
     const updatedCards = cardslh.map(async (card) => {
       const cardResponse = await fetch(
         `https://api.edamam.com/api/recipes/v2/by-uri?type=public&beta=true&uri=${encodeURIComponent(
-          meal.selection[card.id - 1].sections.Lunch.assigned
+          meal.selection[0].sections.Lunch.assigned
         )}&app_id=2df5c54e&app_key=%2085d882d0049a0409d41f0a3b69d78b1d%09&field=label&field=image&field=source&field=calories&field=glycemicIndex&field=mealType&field=totalDaily`
       );
       const cardData = await cardResponse.json();
@@ -505,9 +515,10 @@ function Suggestive() {
 
   const fetchDinner = async () => {
     const updatedCards = cardsdn.map(async (card) => {
+      console.log(meal);
       const cardResponse = await fetch(
         `https://api.edamam.com/api/recipes/v2/by-uri?type=public&beta=true&uri=${encodeURIComponent(
-          meal.selection[card.id - 1].sections.Dinner.assigned
+          meal.selection[0].sections.Dinner.assigned
         )}&app_id=2df5c54e&app_key=%2085d882d0049a0409d41f0a3b69d78b1d%09&field=label&field=image&field=source&field=calories&field=glycemicIndex&field=mealType&field=totalDaily`
       );
       const cardData = await cardResponse.json();
@@ -519,7 +530,7 @@ function Suggestive() {
   return (
     <div className="sugg-container">
       <div className="Breakfast">
-        <h1>Breakfast</h1>
+        <h1 className="mealtit">Breakfast</h1>
         {cardsbf.map((card) => (
           <div key={card.id} className="sugg-card">
             <img
@@ -527,11 +538,17 @@ function Suggestive() {
               className="sugg-img"
             />
             {card.title}
+            <h1 className="dish">
+              Dish: {card.data && card.data.hits[0].recipe.label}
+            </h1>
+            <h1 className="dish">
+              Calories: {card.data && card.data.hits[0].recipe.calories}
+            </h1>
           </div>
         ))}
       </div>
       <div className="Lunch ">
-        <h1>Lunch</h1>
+        <h1 className="mealtit">Lunch</h1>
         {cardslh.map((card) => (
           <div key={card.id} className="sugg-card">
             <img
@@ -539,11 +556,17 @@ function Suggestive() {
               className="sugg-img"
             />
             {card.title}
+            <h1 className="dish">
+              Dish: {card.data && card.data.hits[0].recipe.label}
+            </h1>
+            <h1 className="dish">
+              Calories: {card.data && card.data.hits[0].recipe.calories}
+            </h1>
           </div>
         ))}
       </div>
       <div className="Dinner">
-        <h1>Dinner</h1>
+        <h1 className="mealtit">Dinner</h1>
         {cardsdn.map((card) => (
           <div key={card.id} className="sugg-card">
             <img
@@ -551,6 +574,12 @@ function Suggestive() {
               className="sugg-img"
             />
             {card.title}
+            <h1 className="dish">
+              Dish: {card.data && card.data.hits[0].recipe.label}
+            </h1>
+            <h1 className="dish">
+              Calories: {card.data && card.data.hits[0].recipe.calories}
+            </h1>
           </div>
         ))}
       </div>
@@ -558,4 +587,5 @@ function Suggestive() {
   );
 }
 
-export default Suggestive; */
+export default Suggestive;
+*/

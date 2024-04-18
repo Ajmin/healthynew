@@ -530,9 +530,7 @@ h2 {
   padding: 1px;
 }
 
-.breakfast h1,
-.dinner h1,
-.lunch h1 {
+.mealtit {
   position: relative;
   left: 100px;
   top: 10px;
@@ -724,4 +722,13 @@ h2 {
   border: none;
   padding-bottom: 9.5vh;
   background-color: transparent;
+}
+
+.dish {
+  position: relative;
+  font-family: "SF UI Display";
+  font-style: normal;
+  color: #030303;
+  top: -60%;
+  font-size: 10px;
 }

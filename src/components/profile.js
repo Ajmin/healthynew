@@ -52,10 +52,21 @@ function Profile() {
         newData.activityfactor = 1.9;
       }
 
-      const { data, error } = await supabase.from("User-info").insert(
+      const af = newData.activityfactor;
+      const tdee = BMRval * af;
+      const wg = newData.weight - newData.weightGoal;
+      let cal;
+      if (wg > 0) {
+        cal = tdee - 500;
+      } else {
+        cal = tdee + 300;
+      }
+
+      const { data, error } = await supabase.from("userinfo").insert(
         [newData].map((item) => ({
           ...item,
           BMR: BMRval,
+          dailycalories: cal,
           id: User.data.user.id,
         }))
       );
