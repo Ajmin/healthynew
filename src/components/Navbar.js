@@ -1,11 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "./supabaseClient.js";
+import { useContext } from "react";
+import { MealContext } from "../App.js";
 import img1 from "./images/group1.png";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const [user, setUser] = React.useState(null);
+  const [meal, setMeal, user, setUser] = useContext(MealContext);
   React.useEffect(() => {
     const fetchUser = async () => {
       const currentUser = await supabase.auth.getUser();
@@ -32,9 +34,9 @@ export default function Navbar() {
           <>
             <button
               className="minimal-black-btn"
-              onClick={() => handleChange("/programs")}
+              onClick={() => handleChange("/mealplan")}
             >
-              Programs
+              Meals
             </button>
             <button
               className="minimal-black-btn"

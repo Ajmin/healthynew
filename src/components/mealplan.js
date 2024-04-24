@@ -1,9 +1,9 @@
-import React from "react";
 import Suggestive from "./suggestive";
 import SquareCard from "./SquareCard";
 import meal1 from "../images/f1.png";
 import meal2 from "../images/f2.png";
 import meal3 from "../images/f3.png";
+import React from "react";
 
 function Meal() {
   const [day, setDay] = React.useState(-1);

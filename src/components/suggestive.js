@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { MealContext } from "../App";
 import { useContext } from "react";
 import { supabase } from "./supabaseClient";
@@ -6,6 +7,7 @@ import { supabase } from "./supabaseClient";
 function Suggestive(props) {
   const [meal, setMeal, User, setUser] = useContext(MealContext);
   const [dailycal, setDailycal] = React.useState();
+  const navigate = useNavigate();
   console.log(User);
 
   const [cardsbf, setCardsbf] = React.useState([
@@ -265,10 +267,19 @@ function Suggestive(props) {
     setCardsdn(await Promise.all(updatedCards));
   };
 
+  const handleCardClick = async (card) => {
+    const url = `https://api.edamam.com/api/food-database/v2/parser?app_id=769d990d&app_key=079405f7193edf8d8f8ca3f7cf7cb345&ingr=${card.data.hits[0].recipe.label}&nutrition-type=cooking`;
+    console.log(url);
+    const response = await fetch(url);
+    const data = await response.json();
+    data && console.log(data);
+    data && navigate("/product", { state: data });
+  };
+
   return (
     <div className="sugg-container">
       <div className="Breakfast">
-        <h1>Breakfast</h1>
+        <h1 className="mealtit">Breakfast</h1>
         {cardsbf.map((card) => (
           <div key={card.id} className="sugg-card">
             <img
@@ -310,9 +321,13 @@ function Suggestive(props) {
         ))}
       </div>
       <div className="Lunch ">
-        <h1>Lunch</h1>
+        <h1 className="mealtit">Lunch</h1>
         {cardslh.map((card) => (
-          <div key={card.id} className="sugg-card">
+          <div
+            key={card.id}
+            className="sugg-card"
+            onClick={() => handleCardClick(card)}
+          >
             <img
               src={card.data && card.data.hits[0].recipe.image}
               className="sugg-img"
@@ -353,7 +368,7 @@ function Suggestive(props) {
         ))}
       </div>
       <div className="Dinner">
-        <h1>Dinner</h1>
+        <h1 className="mealtit">Dinner</h1>
         {cardsdn.map((card) => (
           <div key={card.id} className="sugg-card">
             <img
@@ -388,6 +403,7 @@ function Suggestive(props) {
                   )}
                   {console.log(0.3 * dailycal)}
                   {console.log(card.data.hits[0].recipe.calories)}
+                  {console.log(card.data)}
                 </div>
               )}
             </h1>
@@ -587,5 +603,7 @@ function Suggestive() {
   );
 }
 
+
 export default Suggestive;
+
 */
