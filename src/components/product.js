@@ -1,14 +1,15 @@
 import React from "react";
 import Cards from "./productcard.js";
 import { useLocation } from "react-router-dom";
-import backgroundImage from "/home/adarsh/new/src/images/recipe_bg.png"; // Import your background image
-
-
+import backgroundImage from "../images/recipe_bg.jpg";
 export default function Product() {
   const { state } = useLocation();
   console.log(state.parsed[0].food.image);
   return (
-    <div className="background-wrapper" style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <div
+      className="background-wrapper"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       <div className="product">
         <div className="product-image">
           <img src={state.parsed[0].food.image} alt="Product" />

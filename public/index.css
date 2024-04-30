@@ -66,7 +66,7 @@ body {
   font-weight: bold;
   font-size: 50px;
   margin-bottom: 10px;
-  color: #1678f2;
+  color: #2b6e3f;
 }
 
 .subtitle {
@@ -93,12 +93,12 @@ body {
 }
 
 nav {
-  top: 0;
+  position: relative;
   z-index: 100;
   display: flex;
   align-items: center;
+  background-color: transparent;
   justify-content: space-between;
-  background-color: #ffffff00;
   height: 20px;
   padding: 20px 25px;
 }
@@ -138,7 +138,7 @@ input {
   border: none;
   color: #f9f0f0b8;
 
-  background-color: #25c0d5ad;
+  background-color: #87e283ad;
   border-radius: 10px;
 }
 
@@ -452,7 +452,6 @@ h2 {
   color: #fff; /* White text color on hover */
 }
 
-
 .product {
   padding-top: 125px;
   justify-content: space-around;
@@ -462,7 +461,7 @@ h2 {
   flex-wrap: wrap;
   margin: 0;
   font-family: "Inter", sans-serif;
-  /* background-color: #1678f2 !important; */
+  background-color: #ffffff !important;
 }
 .product-card {
   height: 573px;
@@ -471,15 +470,12 @@ h2 {
   border-radius: 35.31px;
 }
 
-
-
 .product-image {
   height: 573px;
   width: 586px;
   text-align: center;
   background-color: #d9d9d9;
   border-radius: 35.31px;
-  
 }
 
 .product-header {
@@ -496,31 +492,11 @@ h2 {
   left: 10px;
   justify-content: space-evenly;
 }
-.nutrientssub1 {
+.nutrientssub {
   height: 100px;
   width: 80px;
   border-radius: 10px;
-  background-color: #dd0e0e;
-  color:white;
-  font-size: 18px;
-}
-
-.nutrientssub2 {
-  height: 100px;
-  width: 80px;
-  border-radius: 10px;
-  background-color: rgb(19, 212, 19);
-  color:white;
-  font-size: 18px;
-}
-
-.nutrientssub3 {
-  height: 100px;
-  width: 80px;
-  border-radius: 10px;
-  background-color: #b8ca12;
-  color:white;
-  font-size: 18px;
+  background-color: #8ec641;
 }
 
 .mealplans {
@@ -554,9 +530,7 @@ h2 {
   padding: 1px;
 }
 
-.breakfast h1,
-.dinner h1,
-.lunch h1 {
+.mealtit {
   position: relative;
   left: 100px;
   top: 10px;
@@ -750,54 +724,11 @@ h2 {
   background-color: transparent;
 }
 
-
-
-.recipe-button {
-  background-color: #1678f2;
-  color:white;
-  font-size: 18px;
-  transition-duration: 0.4s;
+.dish {
+  position: relative;
+  font-family: "SF UI Display";
+  font-style: normal;
+  color: #030303;
+  top: -60%;
+  font-size: 10px;
 }
-
-.recipe-button:hover {
-  background-color: #1678f2; 
-  color: #000000;
-}
-
-.recipe{
-  padding-top: 20px;
-}
-
-.Right{
-  padding-top: 20px;
-}
-
-.nutrientssub p{
-padding-left: 6px;
-}
-
-
-
-
-
-.background-wrapper {
-  background-size: cover; /* Make the background image cover the entire container */
-  background-repeat: no-repeat;
-  background-position: center; /* Center the background image */
-  height: 100vh; /* Set the height to fill the entire viewport */
-}
-
-.product {
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(47, 17, 216, 0.1); /* Example box shadow */
-}
-
-.product-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;  /* Example border radius */
-}
-
-
-
