@@ -1,0 +1,180 @@
+.frame-child {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 650px;
+  height: 3000px;
+  max-height: 100%;
+  width: 1900px;
+  object-fit: contain;
+}
+.frame-inner,
+.frame-item {
+  position: absolute;
+  top: -411px;
+  left: -206px;
+  width: 1724px;
+  height: 523.5px;
+  z-index: 1;
+}
+.frame-inner {
+  top: -356px;
+  left: -181.5px;
+  width: 2082.5px;
+  height: 463px;
+  z-index: 2;
+}
+.rectangle-parent {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* display: inline-block; */
+  /* justify-content: space-between; */
+  /* z-index: -1; */
+}
+.healthybite {
+  letter-spacing: 0.04em;
+}
+
+.group-icon,
+.healthybite {
+  position: relative;
+  flex-shrink: 0;
+}
+.healthybite {
+  height: 48px;
+  display: inline-block;
+  white-space: nowrap;
+}
+.group-icon {
+  width: 46.5px;
+  height: 38.5px;
+  z-index: 1;
+}
+.group-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 7.4px 0 0;
+  margin-left: -4.6px;
+}
+.healthybite-parent,
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.healthybite-parent {
+  margin-bottom: -2.099999999999966px;
+  align-items: flex-start;
+}
+.logo {
+  height: 38.5px;
+  align-items: flex-end;
+  padding: 0 0 0 11.1px;
+  box-sizing: border-box;
+  z-index: 3;
+}
+.logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 4.2px;
+  font-size: 24.9px;
+  color: #32794f;
+  font-family: Amita;
+}
+.features1 {
+  position: relative;
+  line-height: 27px;
+  display: inline-block;
+  min-width: 82px;
+}
+.features {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  z-index: 3;
+  cursor: pointer;
+}
+.features2 {
+  position: relative;
+  line-height: 27px;
+  display: inline-block;
+  min-width: 51px;
+}
+.blogs,
+.frame-parent {
+  display: flex;
+  flex-direction: row;
+}
+.blogs {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  z-index: 3;
+}
+.frame-parent {
+  width: 500px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 100%;
+}
+.signup,
+.signup-inner {
+  display: flex;
+  justify-content: flex-start;
+}
+.signup-inner {
+  top: 100px;
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
+  text-align: left;
+  font-size: 20px;
+  color: #616161;
+  font-family: "Open Sans";
+}
+.signup {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-left;
+  padding: 27px 849px 236px 33px;
+
+  padding: 29px 851px 117px 34px;
+  box-sizing: border-box;
+  gap: 74px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 725px) {
+  .signup {
+    gap: 37px;
+    padding-right: 425px;
+    box-sizing: border-box;
+    top: 100px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .signup {
+    gap: 18px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+}

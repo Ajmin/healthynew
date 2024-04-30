@@ -1,0 +1,430 @@
+.login2 {
+  margin: 0;
+  position: relative;
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 700;
+  font-family: "Open Sans";
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 76px;
+}
+.login-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 20px;
+}
+.abcgmailcom2,
+.email3 {
+  font-family: "Open Sans";
+  position: relative;
+  text-align: left;
+  display: inline-block;
+}
+.email3 {
+  font-size: 18px;
+  line-height: 25px;
+  color: #000;
+  min-width: 46px;
+}
+.abcgmailcom2 {
+  width: 103px;
+  border: 0;
+  outline: 0;
+  left: 5px;
+  font-size: 14px;
+  background-color: transparent;
+  height: 19px;
+  /* line-height: 25px; */
+  color: #221f1f;
+  white-space: nowrap;
+  padding: 0;
+}
+.group-icon3 {
+  height: 15.9px;
+  width: 26px;
+  position: relative;
+}
+.box3,
+.email-button1,
+.text3 {
+  align-self: stretch;
+  display: flex;
+}
+.text3 {
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+.box3,
+.email-button1 {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.box3 {
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  padding: 11px 14px;
+}
+.email-button1 {
+  gap: 5px;
+}
+.email4,
+.input1 {
+  display: inline-block;
+  font-family: "Open Sans";
+  position: relative;
+  text-align: left;
+}
+.email4 {
+  font-size: 18px;
+  line-height: 25px;
+  color: #000;
+  min-width: 82px;
+}
+.input1 {
+  top: 10px;
+  width: 104px;
+  border: 0;
+  outline: 0;
+  font-size: 15px;
+  background-color: transparent;
+  height: 38px;
+  line-height: 10px;
+  /* font-weight: 700; */
+  color: #221f1f;
+  padding: 0;
+}
+.password-icon1 {
+  height: 16.8px;
+  width: 26px;
+  position: relative;
+}
+.box4,
+.passwordbutton1,
+.text4 {
+  align-self: stretch;
+  display: flex;
+}
+.text4 {
+  height: 19px;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+  gap: 20px;
+}
+.box4,
+.passwordbutton1 {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.box4 {
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  padding: 11px 14px;
+}
+.passwordbutton1 {
+  gap: 5px;
+}
+.forget-password {
+  width: 115px;
+  position: relative;
+  font-size: 14px;
+  line-height: 19px;
+  font-family: "Open Sans";
+  color: #000;
+  text-align: center;
+  display: inline-block;
+  min-width: 115px;
+}
+.forget-passwprd,
+.passwordbutton-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 3px 0 4px;
+}
+.passwordbutton-parent {
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 0 10px;
+  gap: 6px;
+}
+.login3 {
+  position: relative;
+  font-size: 20px;
+  line-height: 27px;
+  font-family: "Open Sans";
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  min-width: 51px;
+}
+.login-button {
+  cursor: pointer;
+  border: 0;
+  padding: 9px 188px;
+  background-color: #32794f;
+  align-self: stretch;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.login-button:hover {
+  background-color: #59a175;
+}
+.or-continue-with {
+  position: relative;
+  font-size: 20px;
+  line-height: 27px;
+  font-family: "Open Sans";
+  color: #616161;
+  text-align: left;
+}
+.or-continue-with-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 20px;
+}
+.icons8-google-1 {
+  height: 30px;
+  width: 30px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.icons8-google-1-wrapper {
+  width: 50px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: #f2fff5;
+  border: 1px solid #ddf7e3;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px 9px;
+}
+.vector-icon {
+  height: 30px;
+  width: 30px;
+  position: relative;
+}
+.vector-wrapper {
+  cursor: pointer;
+  border: 1px solid #ddf7e3;
+  padding: 8px 9px;
+  background-color: #f2fff5;
+  width: 50px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 50px;
+}
+.pngwing-20-icon {
+  height: 30px;
+  width: 30px;
+  position: relative;
+  object-fit: contain;
+}
+.pngwing-20-wrapper {
+  cursor: pointer;
+  border: 1px solid #ddf7e3;
+  padding: 8px 9px;
+  background-color: #f2fff5;
+  width: 50px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.pngwing-21-icon {
+  height: 30px;
+  width: 30px;
+  position: relative;
+  object-fit: contain;
+}
+.frame-parent1,
+.pngwing-21-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.pngwing-21-wrapper {
+  width: 50px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: #f2fff5;
+  border: 1px solid #ddf7e3;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  padding: 8px 9px;
+}
+.frame-parent1 {
+  flex: 1;
+  justify-content: space-between;
+  max-width: 100%;
+  gap: 20px;
+}
+.frame-wrapper2 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 44px;
+  box-sizing: border-box;
+}
+.frame-wrapper1,
+.frame-wrapper2,
+.login-button-parent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.login-button-parent {
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+}
+.frame-wrapper1 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 0 0 1px;
+  box-sizing: border-box;
+}
+.dont-have-an {
+  position: relative;
+  font-size: 18px;
+  line-height: 25px;
+  font-family: "Open Sans";
+  color: #616161;
+  text-align: left;
+}
+.dont-have-an-account-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2px 0 0;
+}
+.sign-up1 {
+  position: relative;
+  font-size: 20px;
+  line-height: 27px;
+  font-family: "Open Sans";
+  color: #32794f;
+  text-align: left;
+  display: inline-block;
+  min-width: 69px;
+  flex-shrink: 0;
+  debug_commit: 1de1738;
+}
+.frame-parent2,
+.sigin1 {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.sigin1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0 0 0 3px;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+}
+.frame-parent2 {
+  gap: 10px;
+}
+.frame-form,
+.frame-parent2,
+.frame-wrapper3 {
+  display: flex;
+  align-items: flex-start;
+}
+.frame-wrapper3 {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 20px;
+}
+.frame-form {
+  margin: 0;
+  width: 439px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+  max-width: 100%;
+  display: inlline block;
+}
+@media screen and (max-width: 450px) {
+  .input1,
+  .login2 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .login3 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .login-button {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  .or-continue-with {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .frame-parent1 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .frame-wrapper2 {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  .sign-up1 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .frame-form {
+    gap: 20px;
+  }
+}

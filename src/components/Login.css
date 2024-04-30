@@ -1,0 +1,201 @@
+.rectangle-icon {
+  position: absolute;
+  height: 100%;
+
+  top: 0;
+  bottom: 0;
+  left: 780px;
+  /* display: inline-block; */
+
+  max-height: 100%;
+  width: 1500px;
+  object-fit: contain;
+}
+.frame-child1,
+.frame-child2 {
+  position: absolute;
+  top: -411px;
+  left: -206px;
+  width: 1724px;
+  height: 523.5px;
+  z-index: 1;
+}
+.frame-child2 {
+  top: -356px;
+  left: -181.5px;
+  width: 2082.5px;
+  height: 463px;
+  z-index: 2;
+}
+.rectangle-group {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+}
+.health1 {
+  letter-spacing: 0.04em;
+}
+.y1 {
+  letter-spacing: 0.1em;
+}
+.bite1 {
+  letter-spacing: 0.04em;
+}
+.healthybite1 {
+  height: 48px;
+  top: 30px;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.group-icon1 {
+  top: 15px;
+  width: 46.5px;
+  height: 38.5px;
+  position: relative;
+  z-index: 1;
+}
+.group-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 7.4px 0 0;
+  margin-left: -4.6px;
+}
+.healthybite-group,
+.logo1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.healthybite-group {
+  margin-bottom: -2.099999999999966px;
+  align-items: flex-start;
+}
+.logo1 {
+  height: 38.5px;
+  align-items: flex-end;
+  padding: 0 0 0 11.1px;
+  box-sizing: border-box;
+  z-index: 3;
+}
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 4.2px;
+  font-size: 24.9px;
+  color: #32794f;
+  font-family: Amita;
+}
+.features4 {
+  top: 10px;
+  left: 5px;
+  position: relative;
+  line-height: 27px;
+  display: inline-block;
+  min-width: 82px;
+  /* cursor: pointer; */
+}
+.features3 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  z-index: 3;
+  cursor: pointer;
+}
+.features5 {
+  top: 10px;
+  left: 5px;
+  position: relative;
+  line-height: 27px;
+  display: inline-block;
+  min-width: 51px;
+}
+.blogs1,
+.frame-group {
+  display: flex;
+  flex-direction: row;
+}
+.blogs1 {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  z-index: 3;
+}
+.features6 {
+  top: 10px;
+  left: 30px;
+  position: relative;
+  line-height: 27px;
+  display: inline-block;
+  min-width: 51px;
+}
+.blogs2 {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  z-index: 3;
+}
+.frame-group {
+  margin: 0;
+  width: 500px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 100%;
+  text-align: left;
+  font-size: 20px;
+  color: #616161;
+  font-family: "Open Sans";
+}
+.login,
+.login-inner {
+  display: flex;
+  justify-content: flex-start;
+}
+.login-inner {
+  position: absolute;
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.login {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  /* border: 1px solid rgba(0, 0, 0, 0.2); */
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-left;
+  padding: 27px 849px 236px 33px;
+  gap: 74px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 725px) {
+  .login {
+    gap: 37px;
+    padding-right: 424px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .login {
+    gap: 18px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+}

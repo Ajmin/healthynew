@@ -105,10 +105,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login handleRender={handleState} />} />
+          <Route path="/Login" element={<Login handleRender={handleState} />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/portal" element={<Portal />} />
+          <Route path="/portal" element={<Portal />} />s
           <Route path="/product" element={<Product />} />
           <Route path="/suggestive" element={<Suggestive />} />
           <Route path="/mealplan" element={<MealPlan />} />
